@@ -1,0 +1,5 @@
+# 逆向工具二进制（体积大，由 reverse/setup_apk_lab.sh 一键下载重建）
+reverse/tools/
+# 多语言测试构建产物（test_polyglot.sh 已改为进临时目录，此处兜底）
+polyglot/*.class
+polyglot/hello_c
