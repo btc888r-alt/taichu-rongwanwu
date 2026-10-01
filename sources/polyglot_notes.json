@@ -1,0 +1,233 @@
+[
+  {
+    "name": "frida/frida",
+    "url": "https://github.com/frida/frida",
+    "language": "C",
+    "build": "meson + ninja（根目录 meson.build；顶层 Makefile/make 封装），project('frida','c')",
+    "deps": [
+      "glib",
+      "libffi",
+      "capstone",
+      "QuickJS",
+      "libdwarf"
+    ],
+    "tests": "tests/ 目录 + CI（.github/workflows/ci.yml）"
+  },
+  {
+    "name": "nomic-ai/gpt4all",
+    "url": "https://github.com/nomic-ai/gpt4all",
+    "language": "C++",
+    "build": "CMake（gpt4all-chat/CMakeLists.txt、gpt4all-backend/CMakeLists.txt；Qt Creator 或 CLI cmake+ninja）",
+    "deps": [
+      "Qt6（base/declarative/httpserver/svg/pdf/5compat）",
+      "llama.cpp（后端 vendored）",
+      "Vulkan SDK",
+      "CUDA Toolkit（可选 GPU）"
+    ],
+    "tests": "无专用 tests/ 目录；qa_checklist.md 手工清单 + CI codespell"
+  },
+  {
+    "name": "radareorg/radare2",
+    "url": "https://github.com/radareorg/radare2",
+    "language": "C",
+    "build": "meson + ninja 为主（根目录 meson.build），传统 sys/install.sh 的 acr/configure + make 也支持；Windows 用 preconfigure.bat/configure.bat/make.bat",
+    "deps": [
+      "capstone",
+      "sdb（内置 vendored）",
+      "tree-sitter（shlr）",
+      "xxhash（内置）",
+      "libmagic（可选）"
+    ],
+    "tests": "tests/ 目录（test/unit、test/db 等，make test / run_unit.sh）+ CI"
+  },
+  {
+    "name": "rizinorg/cutter",
+    "url": "https://github.com/rizinorg/cutter",
+    "language": "C++",
+    "build": "CMake（根目录 CMakeLists.txt）；依赖的 rizin 用 meson 编译（git clone --recurse-submodules 后 cmake --build）",
+    "deps": [
+      "Qt6",
+      "rizin（git 子模块）",
+      "libzip",
+      "KSyntaxHighlighter",
+      "Python3"
+    ],
+    "tests": "无专用 tests/ 目录；CI（.github/workflows/ci.yml）构建验证"
+  },
+  {
+    "name": "x64dbg/x64dbg",
+    "url": "https://github.com/x64dbg/x64dbg",
+    "language": "C++",
+    "build": "CMake（根目录 CMakeLists.txt；生成 VS 工程/MSVC 编译），Windows-only 调试器",
+    "deps": [
+      "Qt",
+      "Zydis",
+      "XEDParse",
+      "asmjit",
+      "TitanEngine",
+      "Scylla",
+      "Jansson",
+      "lz4"
+    ],
+    "tests": "tests/ 目录（src/test、src/tests）+ CI"
+  },
+  {
+    "name": "Konloch/bytecode-viewer",
+    "url": "https://github.com/Konloch/bytecode-viewer",
+    "language": "Java",
+    "build": "Maven（pom.xml；mvn package 打包，checkstyle.xml 做代码风格检查）",
+    "deps": [
+      "asm（org.ow2.asm 全家桶：asm/asm-tree/asm-util）",
+      "cfr（org.benf:cfr 反编译器）",
+      "apktool-cli/apktool-lib（org.apktool）",
+      "bined（org.exbin.bined 二进制查看）",
+      "janino（commons-compiler）",
+      "commons-compress / commons-codec"
+    ],
+    "tests": "src/test + GitHub Actions（maven.yml）"
+  },
+  {
+    "name": "NationalSecurityAgency/ghidra",
+    "url": "https://github.com/NationalSecurityAgency/ghidra",
+    "language": "Java",
+    "build": "Gradle（build.gradle + settings.gradle，gradlew 包装器；主任务 gradle buildGhidra，需先运行 gradle -I gradle/support/fetchDependencies.gradle 下载外部依赖；DevGuide 要求 JDK 25 64-bit + Gradle 9.1.0+ + Python3）",
+    "deps": [
+      "org.antlr:antlr:3.5.2（3.x 解析器）",
+      "commons-io:commons-io:2.21.0",
+      "YAJSW（服务包装器，二进制通过 fetchDependencies 下载）",
+      "PostgreSQL（服务器组件，二进制下载）",
+      "Z3（求解器，二进制下载）",
+      "java-sarif（SARIF 输出）"
+    ],
+    "tests": "各 Ghidra 模块 src/test（含 test.slow）+ GitHub Actions（build-ghidra.yml / build-ghidra-multi-platform-artifact.yml）"
+  },
+  {
+    "name": "dataease/dataease",
+    "url": "https://github.com/dataease/dataease",
+    "language": "Java",
+    "build": "Maven（根 pom.xml，多模块：core、sdk、drivers、de-xpack 等；core 下分 core-backend（Java）+ core-frontend）",
+    "deps": [
+      "spring-boot-starter-parent（Spring Boot 3.5.15）",
+      "spring-cloud-alibaba / spring-cloud",
+      "mybatis-plus",
+      "spring-boot-starter-websocket",
+      "velocity（模板引擎）",
+      "knife4j（API 文档）",
+      "java-jwt（鉴权）"
+    ],
+    "tests": "core/core-backend/src/test + 顶层 tests/ 目录（含 excel-file-access、static-resource-security 等测试资源集）+ GitHub Actions"
+  },
+  {
+    "name": "iBotPeaches/Apktool",
+    "url": "https://github.com/iBotPeaches/Apktool",
+    "language": "Java",
+    "build": "Gradle（build.gradle.kts + settings.gradle.kts，gradlew 包装器；模块：brut.apktool/apktool-lib、apktool-cli；构建入口 ./gradlew build shadowJar proguard，输出单文件可执行 JAR）",
+    "deps": [
+      "baksmali（smali 3.x）",
+      "smali（smali 3.x）",
+      "guava",
+      "commons-io（org.apache.commons）",
+      "commons-cli",
+      "R8（发布时做 ProGuard 混淆/瘦身）"
+    ],
+    "tests": "brut.apktool/apktool-lib/src/test + GitHub Actions（build.yml：多操作系统 × JDK 8/11/17/21/25 矩阵测试）"
+  },
+  {
+    "name": "skylot/jadx",
+    "url": "https://github.com/skylot/jadx",
+    "language": "Java",
+    "build": "Gradle（build.gradle.kts + settings.gradle.kts，gradlew 包装器；多模块：jadx-core/jadx-cli/jadx-gui/jadx-plugins；依赖版本统一在 gradle/libs.versions.toml）",
+    "deps": [
+      "gson（com.google.code.gson）",
+      "asm（org.ow2.asm 9.10.1）",
+      "smali（dexlib2 3.0.10）",
+      "raung（输入格式）",
+      "jcommander（CLI 参数）",
+      "flatlaf（GUI 主题）",
+      "slf4j（日志）"
+    ],
+    "tests": "jadx-core/src/test + GitHub Actions（build-test.yml / build-artifacts.yml）"
+  },
+  {
+    "name": "CherryHQ/cherry-studio",
+    "url": "https://github.com/CherryHQ/cherry-studio",
+    "language": "TypeScript",
+    "build": "pnpm monorepo（electron-vite 构建 + electron-builder 打包桌面应用；各平台构建脚本）",
+    "deps": [
+      "@anthropic-ai/claude-agent-sdk",
+      "@cherrystudio/dsh-bridge",
+      "@deepseek-ai/dsh-sdk-client",
+      "@earendil-works/pi-ai",
+      "@earendil-works/pi-coding-agent"
+    ],
+    "tests": "vitest 多 project（main/renderer/shared/aicore/preload 等）+ Playwright e2e + GitHub Actions CI"
+  },
+  {
+    "name": "blackmatrix7/ios_rule_script",
+    "url": "https://github.com/blackmatrix7/ios_rule_script",
+    "language": "JavaScript",
+    "build": "无构建（纯脚本；无 package.json、无包管理器文件；script/rule/rewrite 目录为 .js 脚本与 JSON 配置集合）",
+    "deps": [],
+    "tests": "无（无测试目录/测试脚本；.github 下仅 ISSUE_TEMPLATE，无 CI workflow）"
+  },
+  {
+    "name": "google-gemini/gemini-cli",
+    "url": "https://github.com/google-gemini/gemini-cli",
+    "language": "TypeScript",
+    "build": "npm workspaces（package-lock.json；构建经 node scripts/build.js，用 esbuild 打包）",
+    "deps": [
+      "ink",
+      "node-fetch-native",
+      "proper-lockfile",
+      "simple-git",
+      "latest-version",
+      "punycode"
+    ],
+    "tests": "vitest（各 workspace）+ integration/memory/perf 专项测试套件 + GitHub Actions CI"
+  },
+  {
+    "name": "lobehub/lobehub",
+    "url": "https://github.com/lobehub/lobehub",
+    "language": "TypeScript",
+    "build": "pnpm monorepo（packageManager pnpm@12.4.1；构建为 Next.js + Vite SPA 组合，脚本内混用 bun run）",
+    "deps": [
+      "@anthropic-ai/sdk",
+      "@aws-sdk/client-s3",
+      "@azure-rest/ai-inference",
+      "@aiden0z/pptx-renderer",
+      "@atlaskit/pragmatic-drag-and-drop",
+      "@atlaskit/pragmatic-drag-and-drop-hitbox"
+    ],
+    "tests": "vitest（test-app/test-server 双目标）+ Playwright e2e（@lobechat/e2e-tests）+ GitHub Actions CI（codecov.yml）"
+  },
+  {
+    "name": "n8n-io/n8n",
+    "url": "https://github.com/n8n-io/n8n",
+    "language": "TypeScript",
+    "build": "pnpm monorepo（turbo run build；pnpm-lock + pnpm-workspace.yaml）",
+    "deps": [
+      "axios",
+      "lodash",
+      "jmespath",
+      "luxon",
+      "json-schema",
+      "esprima-next"
+    ],
+    "tests": "vitest（vitest.workspace.ts）+ turbo run test + Playwright（n8n-playwright）+ GitHub Actions CI"
+  },
+  {
+    "name": "openclaw/openclaw",
+    "url": "https://github.com/openclaw/openclaw",
+    "language": "TypeScript",
+    "build": "pnpm monorepo（自定义 scripts/build-all.mts 统一构建，底层 tsdown 打包；另有 Android gradle 侧链）",
+    "deps": [
+      "@anthropic-ai/sdk",
+      "@agentclientprotocol/sdk",
+      "@clack/prompts",
+      "@earendil-works/pi-tui",
+      "@babel/parser",
+      "@babel/traverse"
+    ],
+    "tests": "vitest（test/ 目录多配置：unit/e2e/channels/contracts）+ Docker e2e 测试矩阵 + Playwright UI 测试 + GitHub Actions CI"
+  }
+]
