@@ -1,0 +1,122 @@
+[
+  {
+    "name": "NationalSecurityAgency/ghidra",
+    "url": "https://github.com/NationalSecurityAgency/ghidra",
+    "stars": 80149,
+    "relevance": "NSA 开源的软件逆向工程（SRE）框架，集反汇编/反编译/图形化分析/脚本化于一体的二进制分析工作台，是桌面逆向领域的标杆工具。",
+    "resources": "GhidraDocs/ 目录含 GettingStarted.md 入门指南、CheatSheet.html 命令速查表和 GhidraClass 培训资料；支持 Java/Python（PyGhidra）编写扩展与自动化脚本，DevGuide.md 为开发者指南；GhidraDocs/languages/ 汇集各处理器架构支持文档。官方文档站另有完整用户手册，可整合成速查表、入门教程和脚本开发指南。",
+    "language": "Java"
+  },
+  {
+    "name": "skylot/jadx",
+    "url": "https://github.com/skylot/jadx",
+    "stars": 50702,
+    "relevance": "Android Dex/APK 反编译为 Java 源码的工具（命令行 jadx + 图形界面 jadx-gui），APK 逆向的事实标准入口。",
+    "resources": "jadx-plugins/ 下 13 个官方插件目录（dex/apks/aab/kotlin-metadata/smali/xapk 等输入格式插件），插件生态成熟；GitHub Wiki 含 Troubleshooting 问答、Smali debugger 设置、GUI 快捷键表与 jadx-gui 功能总览教程；支持作为 Java 库被程序调用（有 wiki 文档）；jadx-cli 模块提供命令行选项，可整合成命令行手册与插件开发资料。",
+    "language": "Java"
+  },
+  {
+    "name": "x64dbg/x64dbg",
+    "url": "https://github.com/x64dbg/x64dbg",
+    "stars": 49668,
+    "relevance": "开源 Windows 用户态调试器，专为无源码可执行文件的逆向工程与恶意软件分析优化，是动态调试的代表工具。",
+    "resources": "docs/ 下 Sphinx 文档，其中 docs/commands/ 按 15 个分类（断点控制、内存操作、追踪、脚本、搜索等）整理全部调试命令，是现成的命令手册；官方插件站 plugins.x64dbg.com 提供插件生态；官网博客 x64dbg.com/blog 有教程文章；仓库另附 README_zh.md 中文说明。可整合成命令手册、插件列表与中文入门文档。",
+    "language": "C++"
+  },
+  {
+    "name": "mitmproxy/mitmproxy",
+    "url": "https://github.com/mitmproxy/mitmproxy",
+    "stars": 45212,
+    "relevance": "支持 TLS 拦截的交互式 HTTP/1、HTTP/2、WebSocket 代理，面向渗透测试与协议逆向的流量抓包改写工具（含命令行 mitmdump 与网页版 mitmweb）。",
+    "resources": "examples/addons/ 下 30 个示例插件脚本（如 http-modify-form.py 表单改写、filter-flows.py 流量过滤、duplicate-modify-replay.py 重放），是直接可抄的拦截改写模板；官方文档站 docs.mitmproxy.org 含完整教程与插件 API 文档；仓库 docs/ 目录与 CHANGELOG 补充版本信息。可整合成插件示例库、命令手册与教程文档。",
+    "language": "Python"
+  },
+  {
+    "name": "zhaoxuya520/reverse-skill",
+    "url": "https://github.com/zhaoxuya520/reverse-skill",
+    "stars": 39204,
+    "relevance": "面向 AI agent 的逆向工程/授权渗透技能路由包：当 agent 遇到 APK、二进制、JS 加密、CTF 或渗透目标时，按路由表选择正确工具与方法论的剧本集合，而非传统逆向工具本身。",
+    "resources": "skills/ 下 56 个场景技能模块（apk-reverse、ghidra-reverse、ida-reverse、binary-ninja-reverse、dotnet-reverse、ctf-sandbox、firmware-pentest 等），由 skills/MASTER-ROUTING.md 主路由表与 44 条路由规则（R0–R45）驱动；scripts/ 含配套自动化脚本；docs/ 下 OVERVIEW、QUICKSTART_zh、ARCHITECTURE 等中英双语文档，官网 reverse.apivix.com 有在线教程。可整合成按场景分类的工具选型手册与中文快速入门。",
+    "language": "PowerShell"
+  },
+  {
+    "name": "dnSpy/dnSpy",
+    "url": "https://github.com/dnSpy/dnSpy",
+    "stars": 29672,
+    "relevance": ".NET 调试器与程序集编辑器：可在无源码情况下调试、反编译、编辑 .NET/Unity 程序集（含 IL 级方法体编辑与元数据/十六进制编辑），.NET 逆向与游戏（Unity）逆向的核心工具。",
+    "resources": "可脚本化调试：内置 C# Interactive 窗口可用脚本控制调试器，配合 locals/watch/内存窗口导出解密数据；公开扩展 API，仓库 Extensions/ 目录含 Debugger、AsmEditor、Scripting.Roslyn 等官方扩展模块示例，可作为插件开发的学习材料；GitHub Wiki 有构建与使用文档。注意仓库已归档（作者停止维护），整合时以其功能文档与扩展 API 为主。",
+    "language": "C#（99.8%）"
+  },
+  {
+    "name": "icsharpcode/ILSpy",
+    "url": "https://github.com/icsharpcode/ILSpy",
+    "stars": 26190,
+    "relevance": "开源跨平台 .NET 反编译器（IL 转 C#），Windows/Linux/macOS 桌面端 + 多种前端，是 .NET 程序静态逆向的标准入口。",
+    "resources": "命令行工具 ILSpyCmd（dotnet tool，仓库 doc/Command Line.txt 有完整参数文档）适合批处理反编译；提供 ICSharpCode.Decompiler / ILSpyX NuGet 包，可嵌入自研逆向工具链；GitHub Wiki 有插件生态页（Plugins）与 ReadyToRun 教程；doc/ 含反编译器架构文档（DecompilerArchitecture.html、ILAst 模式匹配）；官方维护 VS2022 与 VS Code 扩展。",
+    "language": "C#（95.3%）"
+  },
+  {
+    "name": "iBotPeaches/Apktool",
+    "url": "https://github.com/iBotPeaches/Apktool",
+    "stars": 25712,
+    "relevance": "Android APK 逆向的标准工具链：反编译（解码 resources 到近原始形式、生成 smali）与回编译修改，是安卓应用逆向/二次打包分析的必备工具。",
+    "resources": "完整工具链用法：apktool d <apk> 反编译（resources 解码 + smali 生成）→ 修改 → apktool b <dir> 回编译 → 签名打包；支持 smali 单步调试与类工程目录结构自动化重复任务。官方文档在独立仓库 iBotPeaches/apktool.org（Docusaurus 站点，含 wiki/the-basics 入门指南与多版本版本化文档）；本仓库 scripts/{linux,osx,windows} 提供各平台启动脚本。注意作者声明不用于盗版，仅用于本地化/功能增强等合法用途。",
+    "language": "Java（98.5%）"
+  },
+  {
+    "name": "radareorg/radare2",
+    "url": "https://github.com/radareorg/radare2",
+    "stars": 24908,
+    "relevance": "类 UNIX 命令行逆向工程框架：集反汇编、调试、十六进制编辑、文件格式分析、仿真于一体的工具集与库，跨架构二进制逆向的瑞士军刀。",
+    "resources": "命令手册齐全：USAGE.md 速查 + man/ 完整手册页 + doc/ 数十篇专题文档（如 esil.md、debug.md、abi.md、macros.md）；插件生态通过 r2pm 安装（r2ghidra 反编译、iaito 官方 Qt GUI、r2frida、r2dec 等）；脚本化首选 r2pipe（支持 Python 等 20+ 语言，命令输出可直接转 JSON 解析）；另有官方 radare2book 在线教程。仓库持续活跃（当前 6.2.x）。",
+    "language": "C（96.6%）"
+  },
+  {
+    "name": "frida/frida",
+    "url": "https://github.com/frida/frida",
+    "stars": 22093,
+    "relevance": "跨平台动态插桩工具包，移动与桌面逆向的事实标准，APK 动态分析最常用的 hook 引擎。",
+    "resources": "官方文档站 frida.re/docs 覆盖 Java 层 hook、Native 函数拦截、Stalker 代码跟踪等；pip 或 npm 可装 frida-tools（含 frida-trace 自动生成 hook 模板、frida-ps、frida-kill 等 CLI）与 Python、Node 绑定。APK 方面：Java.use() 对 Android Java 层方法做 hook、改参数与返回值，是脱壳（hook DexClassLoader 并 dump 内存中的 dex）以及绕过 SSL pinning、root 检测的通用思路；codeshare.frida.re 社区脚本库沉淀了大量可直接复用的 Android 脱壳与 hook 脚本。本仓库主要托管构建脚本与发布二进制，示例与文档分散在 frida-docs、frida-tools 等兄弟仓库。",
+    "language": "C"
+  },
+  {
+    "name": "MobSF/Mobile-Security-Framework-MobSF",
+    "url": "https://github.com/MobSF/Mobile-Security-Framework-MobSF",
+    "stars": 21861,
+    "relevance": "移动应用安全自动化分析框架，支持 Android、iOS 与 Windows，可一键对 APK 做静态加动态安全分析并输出报告。",
+    "resources": "静态分析支持 APK、IPA、APPX 与源码，覆盖权限、组件、证书、硬编码密钥与恶意行为签名等检查；动态分析支持 Android 与 iOS 的交互式插桩测试、运行时数据与网络流量分析。仓库内 mobsf/StaticAnalyzer、DynamicAnalyzer、MalwareAnalyzer、templates 目录即分析流水线与报告模板，scripts/ 下有 mass_static_analysis.py 等批量脚本。提供 REST API 与 CLI 便于接入 CI/CD，另有 mobsf.live 在线演示站。",
+    "language": "Python / JavaScript"
+  },
+  {
+    "name": "cheat-engine/cheat-engine",
+    "url": "https://github.com/cheat-engine/cheat-engine",
+    "stars": 19249,
+    "relevance": "面向 PC 游戏修改的内存扫描与调试开发环境，偏桌面端，与 APK 逆向无直接关系，在清单中作对比参照。",
+    "resources": "核心能力是内存扫描器（数值与指针扫描）、调试器、反汇编器、变速功能与 Lua 脚本自动化，附带 DBVM 内核级调试、Mono 与 .NET 数据收集器等。学习资源以官网 Wiki（wiki.cheatengine.org）、论坛（forum.cheatengine.org）及软件内置的新手教程为主。仓库含 lua/ 目录与 Lazarus 构建工程。注意：它是 Windows 桌面工具，不是 Android 或 APK 工具链。",
+    "language": "Pascal"
+  },
+  {
+    "name": "sensepost/objection",
+    "url": "https://github.com/sensepost/objection",
+    "stars": 9419,
+    "relevance": "基于 Frida 的移动运行时探索工具，无需手写 Frida 脚本即可对 APK、IPA 做交互式动态分析。",
+    "resources": "pip 安装即得 objection 命令，常用子命令覆盖：android hooking（枚举类与方法、hook 指定方法并打印参数调用栈）、SSL pinning 绕过（android sslpinning disable）、root 检测绕过、内存 dump 与 patch、堆对象查看、文件系统与 keystore、keychain 访问。agent/src/android 与 agent/src/generic 目录是 TypeScript 编写的 Frida 注入脚本（hooking.ts、pinning.ts、heap.ts、memory.ts 等），可直接学习其 Java 层与 native 层 hook 写法。官方 Wiki 有功能列表、截图与安装文档。",
+    "language": "Python / TypeScript"
+  },
+  {
+    "name": "androguard/androguard",
+    "url": "https://github.com/androguard/androguard",
+    "stars": 6310,
+    "relevance": "Android 逆向与渗透测试的 Python 工具库，APK 静态分析的经典工具。",
+    "resources": "v5 提供 apkparser-ag、dexparser-ag 等 CLI：解析 APK 包元数据、权限、AndroidManifest 与 resources.arsc；支持 Dalvik 反汇编与控制流图、Java 反编译、跨引用（findrefs）与漏洞扫描、APK 解包与重打包补丁，以及 ARM64 .so 的反汇编与反编译（androguard[arm]）。examples/ 目录含 apk_and_dex.py、decompile.py、disassemble.py、arm.py 等可直接运行的示例脚本，docs/ 下有文档（含 MCP server 说明），并提供 Claude Code skills 与 MCP 集成。",
+    "language": "Python"
+  },
+  {
+    "name": "user1342/Awesome-Android-Reverse-Engineering",
+    "url": "https://github.com/user1342/Awesome-Android-Reverse-Engineering",
+    "stars": 2719,
+    "relevance": "经典 Awesome 合集：Android 逆向培训、资源、工具精选列表，纯资源导航；适合需要快速找工具/课程/书籍的进阶学习者；APK 相关度极高（本身就是 Android 逆向合集），但无原创教程内容。",
+    "resources": "单一 README 收录约百余条精选链接，分类完整：培训（课程/视频/书籍，如 Maddie Stone Android RE 课程、Android Hacker's Handbook）、静态分析（MobSF、QARK、Quark Engine）、动态插桩（Frida、Objection、FriDump）、反编译（jadx☆）、反混淆（simplify、deoptfuscator）、恶意软件分析、CTF/CrackMe、Obfuscation & Anti-Reversing、固件与内核、云 API 逆向；带 ☆ 标记推荐重点资源。最后更新 2025-07-08，维护放缓。",
+    "language": "文档/Markdown"
+  }
+]

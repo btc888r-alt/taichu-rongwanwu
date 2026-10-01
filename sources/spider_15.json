@@ -1,0 +1,122 @@
+[
+  {
+    "name": "microsoft/playwright",
+    "url": "https://github.com/microsoft/playwright",
+    "stars": 96963,
+    "relevance": "微软官方 Web 测试与自动化框架，单 API 驱动 Chromium/Firefox/WebKit 三大浏览器引擎，属于动态渲染（方向②）。",
+    "resources": "核心能力：Playwright Test 端到端测试运行器（自动等待、web-first 断言、多浏览器并行隔离）、Playwright Library 脚本自动化、Playwright CLI 与 MCP（AI agent 驱动）、VS Code 扩展。文档：playwright.dev 官方文档与完整 API 参考，examples 目录示例丰富，Discord 社区活跃。生态：npm 多语言绑定（Python/Java/.NET 均支持），浏览器补丁自动管理，是抓取 JS 渲染页面的事实标准工具之一。",
+    "language": "TypeScript"
+  },
+  {
+    "name": "unclecode/crawl4ai",
+    "url": "https://github.com/unclecode/crawl4ai",
+    "stars": 84607,
+    "relevance": "面向 LLM/AI agent 的开源爬虫，把网页转为干净的 LLM-ready Markdown，属方向①基础爬虫框架（偏 AI 数据管道）；合规可用。",
+    "resources": "核心能力：异步浏览器池抓取，输出带标题/表格/代码结构与引用编号的智能 Markdown（LLM 友好）；多种内容过滤器（PruningContentFilterLXML、BM25ContentFilter、LLMContentFilter）可过滤导航/页脚等噪音；支持 CSS/XPath 结构化抽取、会话/proxy/cookies/自定义 JS 与钩子；提供 CLI 与 Docker 服务部署。生态：docs.crawl4ai.com 文档站点、MCP 接口便于接入 AI agent。2026 年 9 月最新版 v0.9.4，自适应学习站点模式。可整合：Markdown 生成管线、结构化抽取器、浏览器池并发模型。",
+    "language": "Python"
+  },
+  {
+    "name": "scrapy/scrapy",
+    "url": "https://github.com/scrapy/scrapy",
+    "stars": 64543,
+    "relevance": "Python 语言最成熟的高级爬虫框架，属方向①基础爬虫框架；合规可用。",
+    "resources": "基于 Twisted 异步引擎的通用框架，支持分布式抓取、中间件（middleware）与 pipeline 扩展机制，内置下载中间件、去重、限速。官方文档完备（docs.scrapy.org），维护方为 Zyte（原 Scrapinghub），生态丰富：scrapy-redis 实现分布式队列、scrapy-splash 对接 JS 渲染、Splash/Playwright 插件完善。核心能力可整合：请求调度器、item pipeline 数据清洗管道、signals 信号机制。",
+    "language": "Python"
+  },
+  {
+    "name": "NaiboWang/EasySpider",
+    "url": "https://github.com/NaiboWang/EasySpider",
+    "stars": 44626,
+    "relevance": "完全免费的可视化无代码爬虫软件，图形化设计执行任务，属方向①基础爬虫框架；合规可用（通用工具非特定站点破解）。",
+    "resources": "核心能力：基于 ElectronJS 的桌面应用，网页上点选元素即可无代码生成采集任务，支持浏览器自动化/数据采集/爬虫三类任务；完全免费且允许商业使用与二次开发。仓库含 Examples 示例任务、Docs 文档、Extension 浏览器扩展、ExecuteStage 执行阶段代码。存在与验证码服务（如 CapSolver）集成的说明文档。可整合：可视化任务设计范式（点击流录制）、执行阶段调度模型、无代码 selector 生成思路。",
+    "language": "JavaScript"
+  },
+  {
+    "name": "SeleniumHQ/selenium",
+    "url": "https://github.com/SeleniumHQ/selenium",
+    "stars": 34518,
+    "relevance": "浏览器自动化框架与生态（W3C WebDriver 规范基础设施），属于动态渲染（方向②）。",
+    "resources": "核心能力：语言中立的 WebDriver 接口，兼容所有主流浏览器，支持分布式 Grid 运行、元素定位/等待/交互全套 API。文档：selenium.dev 用户手册详细，支持 Python/Java/JavaScript 等多语言客户端。生态：十余年最成熟的浏览器自动化生态，第三方驱动与工具链最多，配合无头浏览器可渲染抓取动态页面。",
+    "language": "Java"
+  },
+  {
+    "name": "apify/crawlee",
+    "url": "https://github.com/apify/crawlee",
+    "stars": 25962,
+    "relevance": "Node.js 端到端网页抓取与浏览器自动化库，属方向①基础爬虫框架；合规可用。",
+    "resources": "核心能力：统一接口支持 HTTP 抓取与无头浏览器（Playwright）抓取；持久化 URL 队列（广度/深度优先）、可插拔存储（Dataset/KeyValueStore）、自动扩缩容、代理轮换与会话管理、生命周期钩子、可配置路由/重试/Dockerfile 部署。HTTP 层特性：零配置 HTTP2、自动生成浏览器头、复制浏览器 TLS 指纹、内置 Cheerio/JSDOM 高速解析器。由 Apify 维护，npm 包 crawlee；另有 Python 版本 crawllee-python。CLI 可一键初始化项目（npx crawlee create）。可整合：请求队列持久化模型、反封策略配置思路（头/TLS 指纹）、存储抽象层。",
+    "language": "TypeScript"
+  },
+  {
+    "name": "gocolly/colly",
+    "url": "https://github.com/gocolly/colly",
+    "stars": 25542,
+    "relevance": "Go 语言轻量优雅的爬虫框架，属方向①基础爬虫框架；合规可用。",
+    "resources": "核心能力：单核每秒超 1000 请求，简洁 API（OnHTML/OnRequest 回调）；按域名限速与最大并发、自动 cookie/会话管理、同步/异步/并行抓取、缓存、robots.txt 支持、分布式抓取、extensions 扩展、queue 队列与 storage 存储组件、proxy 代理组件。仓库 _examples/ 含大量示例，extensions/ 目录可扩展。生态下游项目广泛（gamedb 等）。可整合：并发调度与限速模型、robots.txt 合规抓取机制、队列/存储扩展组件。",
+    "language": "Go"
+  },
+  {
+    "name": "jhao104/proxy_pool",
+    "url": "https://github.com/jhao104/proxy_pool",
+    "stars": 23740,
+    "relevance": "Python 爬虫代理 IP 池项目，定时采集公开免费代理并验证入库、提供 API/CLI 调用，属于反反爬公开技术（方向③）。",
+    "resources": "核心能力：多免费代理源定时采集（fetcher 模块）、定时有效性验证、Redis/MySQL 等多存储后端（db 模块）、REST API 与 CLI 调用、可扩展自定义代理源。文档：mkdocs 构建的完整文档站点（jhao104.github.io/proxy_pool），README 中文详细。生态：Docker/docker-compose 一键部署，测试用 demo 站点，是构建反爬 IP 轮换能力的公开合规方案。",
+    "language": "Python"
+  },
+  {
+    "name": "sml2h3/ddddocr",
+    "url": "https://github.com/sml2h3/ddddocr",
+    "stars": 14809,
+    "relevance": "通用验证码识别 OCR SDK（带带弟弟 pypi 版），支持文字识别、目标检测与滑块验证码缺口定位，属于反反爬公开技术（方向③）。",
+    "resources": "核心能力：基础 OCR 文字识别（支持自定义字符范围、概率输出、颜色过滤）、目标检测、滑块验证码处理（边缘匹配/图像差异两种算法）、可导入自定义模型、支持多线程批量处理与 GPU 加速。文档：中文 README 极其详尽（参数详解、模型选择指南、性能优化、FAQ），examples/samples 示例齐全。生态：pypi 安装即用（pip install ddddocr），轻量无复杂依赖，是通用公开 OCR 技术，合规可用。",
+    "language": "Python"
+  },
+  {
+    "name": "crawlab-team/crawlab",
+    "url": "https://github.com/crawlab-team/crawlab",
+    "stars": 12276,
+    "relevance": "Go 编写的分布式爬虫管理平台，支持任意语言与框架（Scrapy/Puppeteer/Selenium 等），属方向④分布式/增量爬虫；通用平台工具，合规可用。",
+    "resources": "核心能力：master-worker 架构（gRPC 通信、SeaweedFS 分布式文件系统、MongoDB 存储），提供 Web UI（节点/爬虫/任务管理）、任务调度、定时任务、日志与结果数据查看。文档：docs.crawlab.cn 中英双语完整文档，另有演示站点 demo.crawlab.cn。示例与生态：docker-compose 一键部署示例（crawlab-team/examples），支持 Python、NodeJS、Go、Java、PHP 多语言爬虫接入，k8s 部署脚本齐全。",
+    "language": "Go"
+  },
+  {
+    "name": "code4craft/webmagic",
+    "url": "https://github.com/code4craft/webmagic",
+    "stars": 11676,
+    "relevance": "Java 可扩展爬虫框架，覆盖下载、URL 管理、内容抽取与持久化的全生命周期，属于基础爬虫框架（方向①）。",
+    "resources": "核心能力：模块化设计（webmagic-core/extension/samples/selenium 等多模块），支持 PageProcessor/注解 POJO 两种编程方式、多线程与分布式爬取，XPath/CSS/正则抽取。文档：英文 README 快速上手示例完善，另有中文 README-zh.md 和官网 webmagic.io。生态：Maven Central 发布（us.codecraft），可集成 Selenium 模块做动态渲染爬取，examples 示例齐全。",
+    "language": "Java"
+  },
+  {
+    "name": "berstend/puppeteer-extra",
+    "url": "https://github.com/berstend/puppeteer-extra",
+    "stars": 7405,
+    "relevance": "puppeteer 的模块化插件体系，核心含公开的浏览器指纹反检测 stealth 插件，属方向③反反爬公开技术；合规可用（stealth 是通用反检测技术，非针对特定网站的破解）。",
+    "resources": "核心能力：为 puppeteer 提供插件式扩展架构，官方插件包括 stealth（伪装 headless 浏览器指纹，覆盖 navigator.webdriver、chrome 对象、权限、WebGL 等数十项 evasions）、recaptcha、adblocker、user-data-dir 等。文档：monorepo 每个插件包带独立文档，JSDoc 自动生成 API 手册，另有 playwright-extra 适配 Playwright。示例与生态：提供 anonymize-ua 最小插件示例、每种 evasion 有独立测试用例；npm 发行、生态成熟，是 puppeteer 反检测场景的事实标准插件集。",
+    "language": "JavaScript"
+  },
+  {
+    "name": "BruceDone/awesome-crawler",
+    "url": "https://github.com/BruceDone/awesome-crawler",
+    "stars": 7321,
+    "relevance": "多语言爬虫框架/库资源导航列表（awesome 系列），按语言收录主流爬虫工具，属导航类；纯索引无违规内容，合规可用。",
+    "resources": "核心能力：按 Python、Java、C#、JavaScript、PHP、C++、Ruby、Rust、R、Erlang、Perl、Go、Scala 等 14 种语言分类收录知名爬虫框架与工具，每条带一句话简介与仓库链接（如 Scrapy、pyspider、Apache Nutch、webmagic、SeimiCrawler 等）。文档：单 README 即完整清单，分类清晰。生态：awesome 系列风格，可作爬虫选型速查入口、按语言快速定位对应生态的主力框架。",
+    "language": "无（文档导航）"
+  },
+  {
+    "name": "rmax/scrapy-redis",
+    "url": "https://github.com/rmax/scrapy-redis",
+    "stars": 5643,
+    "relevance": "Scrapy 的 Redis 分布式组件（调度器+去重+管道），让多 spider 实例共享队列实现分布式抓取，属方向④分布式/增量爬虫；通用开源组件，合规可用。",
+    "resources": "核心能力：即插即用替换 Scrapy 调度器与去重过滤器为 Redis 版、Item Pipeline 入 Redis 队列、分布式 Base Spider，多 worker 共享同一 Redis 队列实现分布式抓取与分布式后处理；支持 JSON 参数（url/meta/formdata）入队。本次 fork 版还支持连接池与空闲退避（REDIS_IDLE_BACKOFF_*）等高级配置。文档：GitHub Wiki 有 Usage/History/Getting-Started 全套说明。示例与生态：repo 内含 example-project 与 docker-compose 一键环境，pip 安装、MIT 许可，Scrapy 生态分布式扩展的事实标准。",
+    "language": "Python"
+  },
+  {
+    "name": "yujiosaka/headless-chrome-crawler",
+    "url": "https://github.com/yujiosaka/headless-chrome-crawler",
+    "stars": 5633,
+    "relevance": "基于 Headless Chrome（Puppeteer）的轻量分布式爬虫库，专攻 JS 动态渲染页面，属方向④分布式/增量爬虫；通用开源框架，合规可用。",
+    "resources": "核心能力：分布式爬取，支持并发/延迟/重试配置、DFS 与 BFS 两种遍历算法、Redis 可插拔缓存去重、优先级队列、断点续爬，遵守 robots.txt 并支持 sitemap.xml。文档：docs/API.md 完整 API 手册、TIPS.md 调试指南。示例与生态：examples/ 下有优先级队列、设备/UA 模拟、Redis 缓存、CSV/JSON Lines 导出、条件截图等多个可运行示例；支持页面内 jQuery 注入抽取与爬取截图留证。",
+    "language": "JavaScript"
+  }
+]

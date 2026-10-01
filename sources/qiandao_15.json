@@ -1,0 +1,152 @@
+[
+  {
+    "name": "blackmatrix7/ios_rule_script",
+    "url": "https://github.com/blackmatrix7/ios_rule_script",
+    "stars": 28099,
+    "relevance": "iOS 代理工具（Surge/Loon/Quantumult X）生态的分流规则、重写规则与通用脚本库，其中 script/ 目录含多个 App 签到脚本。",
+    "resources": "script/ 目录按 App 拆分（tieba 百度贴吧、applestore、zheye 知乎、quora、luka、startup、magicjs 通用框架、archive 归档）。现成的 MagicJS 3 签到脚本包括百度贴吧签到（已实现多账户签到）、什么值得买签到、饿了么签到等；单个脚本自带 README 说明所需变量。推送依赖 Bark（iOS）。签到本身逻辑是抓包 Cookie + HTTP 请求，可拆出复用。",
+    "language": "JavaScript",
+    "deploy": "iOS 端：Loon / Surge / Quantumult X（配合 BoxJS 配置）；服务端：NodeJS 直接运行、青龙面板（MagicJS 3 支持变量同步到青龙 magic.json 做服务端签到）；支持多账户",
+    "deps": "JavaScript 脚本（基于 MagicJS 3 框架），NodeJS 环境运行；推送通过 magic_bark_url（Bark）；数据存 magic.json，支持同步到青龙面板；BoxJS 配置（iOS 端）"
+  },
+  {
+    "name": "Sitoi/dailycheckin",
+    "url": "https://github.com/Sitoi/dailycheckin",
+    "stars": 8724,
+    "relevance": "开箱即用的每日签到脚本集合，覆盖 16+ 站点，支持 Docker / 青龙面板 / 群晖部署与多账号。",
+    "resources": "dailycheckin/ 下每个站点一个模块：全民 K 歌（签到领鲜花）、有道云笔记（领存储）、百度贴吧、百度网盘（会员签到+答题）、Bilibili（漫画签到、每日经验、自动投币）、V2EX（铜币）、AcFun（香蕉）、爱奇艺（含会员权益领取）、什么值得买（签到+抽奖）、阿里云盘（签到领会员/空间）、恩山无线论坛、飞牛 NAS 论坛、奥拉星、i 茅台申购、小米运动刷步、百度搜索资源平台。通知推送支持钉钉、企业微信（群机器人/应用消息）、Telegram、Bark、Server 酱（含 Turbo）、PushPlus、Cool Push、Qmsg 酱、飞书。",
+    "language": "Python",
+    "deploy": "Docker（官方镜像 sitoi/dailycheckin）、青龙面板、群晖、本地运行、PyPI 包安装；内置定时任务与项目自动更新",
+    "deps": "Python 3（requirements: requests、rsa、pycryptodome、urllib3）；可 pip 安装 dailycheckin 包；依赖站点 cookie/账号密码配置"
+  },
+  {
+    "name": "qd-today/qd",
+    "url": "https://github.com/qd-today/qd",
+    "stars": 5584,
+    "relevance": "HTTP 请求定时任务自动执行框架：把任意站点的 HAR 录制请求变成可定时执行的签到任务（QD 框架），带 Web 界面和 HAR 编辑器。",
+    "resources": "核心是 HAR 模板机制：浏览器抓包导出 HAR 后在 Web 界面的 HAR Editor 中编辑，框架定时回放请求并处理变量/正则提取/断言，实现任意网站的签到、签到+抽奖、状态监控等。支持多用户、任务分组、执行日志、邮件/推送通知（web.py 内置通知模块）。本质是通用型签到引擎而非固定站点脚本，可把 Sitoi/dailycheckin 这类固定脚本难以覆盖的站点快速做成模板。",
+    "language": "Python",
+    "deploy": "Docker / docker-compose（官方镜像 qdtoday/qd）、直接 python 运行（qd.py / run.py / worker.py）；自带 Web 管理界面（Tornado Server）",
+    "deps": "Python 3 + Tornado（Pipfile/requirements.txt 锁定依赖）；Web 界面需要浏览器（仅保证 Chrome）"
+  },
+  {
+    "name": "Cp0204/quark-auto-save",
+    "url": "https://github.com/Cp0204/quark-auto-save",
+    "stars": 3053,
+    "relevance": "夸克网盘签到、分享链接自动转存、文件名整理、Emby 媒体库刷新一条龙，带 WebUI 的 Docker 应用。",
+    "resources": "核心功能：每日签到领空间（支持多账号签到，仅首账号转存）、分享链接自动转存（含子目录、提取码、失效分享跳过、智能搜索源自动填充）、转存后文件名正则整理、多组定时任务（可按星期执行、有结束期限）。媒体库整合：按任务名搜索 Emby 并自动刷新媒体库，配合 SmartStrm/OpenList 实现自动追更。通知推送：notify.py 支持 Server 酱、微信/QQ 系（Cool Push、Qmsg）、Telegram、Bark 等多渠道。plugins/ 插件模块化可自行扩展。",
+    "language": "Python",
+    "deploy": "Docker（官方镜像 cp0204/quark-auto-save，带 WebUI 管理配置，端口 5005）；作者标注“可能兼容青龙”（非官方保证）；插件目录 plugins/ 可挂载自定义插件",
+    "deps": "Python（requirements: flask、apscheduler、requests、treelib、natsort）；notify.py 内置通知模块"
+  },
+  {
+    "name": "MoeNetwork/Tieba-Cloud-Sign",
+    "url": "https://github.com/MoeNetwork/Tieba-Cloud-Sign",
+    "stars": 1974,
+    "relevance": "百度贴吧云签到：在服务器上配置后全自动完成贴吧签到，配合插件可实现云灌水、点赞、封禁、删帖、审查等管理功能，由社区持续维护。",
+    "resources": "成熟的 PHP Web 应用（含 Web 管理面板、用户/多账号管理、插件系统、模板与 setup 安装向导），开箱即用支持全吧自动签到与插件扩展（云灌水、自动回帖、封禁删帖审查等）；docker 目录提供 Compose 一键部署。通知方面以站内/面板管理为主，未明确内置第三方推送。",
+    "language": "PHP",
+    "deploy": "Docker-Compose 一键部署（含 MySQL、Web 配置面板）；也支持传统 PHP 网站上传部署；内置定时任务（do.php）全自动签到",
+    "deps": "PHP + MySQL，Docker 一键部署内置 MySQL；传统部署需 LNMP/LAMP 环境"
+  },
+  {
+    "name": "linbailo/zyqinglong",
+    "url": "https://github.com/linbailo/zyqinglong",
+    "stars": 1923,
+    "relevance": "青龙面板自用脚本库，主攻滴滴系（出行/加油/代驾领券、签到打卡、滴滴果园）及生活薅羊毛，另含美团、饿了么、得物、顺丰、塔斯汀、霸王茶姬、海底捞、T3 出行、mt 论坛签到等。",
+    "resources": "现成脚本约 13 个：dddc（滴滴签到打卡领券）、ddgy（滴滴果园）、dd出行/加油/代驾领券、T3cx（T3 出行签到领券）、tsthb（塔斯汀签到积分）、bwcj（霸王茶姬签到）、mt（mt 论坛自动签到）、mt.py/美团/饿了么领券、得物星愿森林、顺丰领券任务等，部分转引自 leafTheFish、checkToke 等大佬库。通知走青龙自带 sendNotify 体系。",
+    "language": "Python",
+    "deploy": "青龙面板订阅仓库拉库（ql repo 订阅，crontab 定时），单个脚本也可本地 cron/手动运行",
+    "deps": "Python（requests 类常规依赖）、Node 脚本为无依赖或轻依赖 js；需青龙面板环境，库内自带 sendNotify.py（青龙通知体系：Bark/Telegram/钉钉/企业微信/pushplus 等）"
+  },
+  {
+    "name": "cxOrz/chaoxing-signin",
+    "url": "https://github.com/cxOrz/chaoxing-signin",
+    "stars": 1748,
+    "relevance": "超星学习通签到工具：支持普通签到、拍照签到、手势签到、位置签到、签到码/二维码签到，并有自动监测签到活动、无人值守自动签上的监听模式。",
+    "resources": "命令行签到工具 + React+Material UI+Koa 的 Web 前后端项目，支持多用户凭据存储；监听模式可自动检测课堂签到活动并完成签到。通知推送支持 QQ 机器人、邮件推送、pushplus。注意项目自 2023-06-10 起作者不再维护（已归档），依赖社区 PR。",
+    "language": "TypeScript",
+    "deploy": "本地 Node.js 运行（pnpm start 手动签到 / pnpm monitor 监听自动签到）、服务器部署 Web 版（React+Koa）、Docker 镜像 ghcr.io/cxorz/chaoxing-signin、安卓 Termux 运行",
+    "deps": "Node.js ≥ v18.14，pnpm 安装依赖（monorepo，turbo）；QQ 机器人推送需 go-cqhttp，二维码识别需腾讯云 OCR 的 SecretId/SecretKey"
+  },
+  {
+    "name": "hex-ci/smzdm_script",
+    "url": "https://github.com/hex-ci/smzdm_script",
+    "stars": 1634,
+    "relevance": "什么值得买 App 自用脚本：每日签到、转盘/每日抽奖、签到页每日任务（浏览/收藏/点赞/评论/分享/关注）及全民众测能量值任务。",
+    "resources": "脚本分工明确：smzdm_checkin.js（每日签到）、smzdm_lottery.js（抽奖）、smzdm_task.js（每日任务全套：浏览/收藏/点赞/评论/分享文章、关注用户/栏目/品牌、限时累计活动）、smzdm_testing.js（众测能量值）；附带 sendNotify.js、env.js、bot.js（Telegram Bot）通知能力，支持多账号（& 分隔或多环境变量）。",
+    "language": "JavaScript",
+    "deploy": "青龙面板拉库（ql repo \"smzdm_\" 前缀），定时执行；纯 Node.js 脚本亦可本地 cron 运行",
+    "deps": "Node.js 依赖 got@11、crypto-js；青龙面板环境变量 SMZDM_COOKIE 等（抓包获取）"
+  },
+  {
+    "name": "LuckyPray/XAutoDaily",
+    "url": "https://github.com/LuckyPray/XAutoDaily",
+    "stars": 1588,
+    "relevance": "QQ 生态全自动签到 Xposed 模块，覆盖会员任务/黄钻签到/腾讯视频会员打卡/QQ日签卡/小程序打卡/会员公众号签到/好友续火点赞等QQ全家桶每日任务（原作者 teble，本仓库为 LuckyPray 接手的现行仓库）。",
+    "resources": "以Xposed Hook方式注入QQ/TIM客户端实现全自动化，无需维护API脚本：功能覆盖会员签到、黄钻签到、腾讯视频打卡、小程序任务、会员公众号签到、群打卡、好友续火与名片点赞等约14类任务。仓库提供Android APK预编译产物与模块源码（app-meta.json适配Xposed模块仓库），GPL-3.0开源，社区有Telegram频道与讨论群，Issue区持续接收新QQ版本适配需求。注意：README提到作者声明可能停止更新/删库。",
+    "language": "Kotlin",
+    "deploy": "安卓端：编译或下载APK，在Xposed/LSPosed/太极等框架中激活模块，在QQ客户端设置中开关功能；需Android >= 7.0、QQ >= 8.0.0/TIM新版",
+    "deps": "Xposed框架（LSPosed/太极等）；Gradle/Kotlin编译环境（仅自行构建时）；dexkit/mmkv/openssl等子模块"
+  },
+  {
+    "name": "bjc5233/autojs",
+    "url": "https://github.com/bjc5233/autojs",
+    "stars": 1473,
+    "relevance": "Android Auto.js 脚本集，每个.js文件对应一个App的自动签到任务，覆盖百度地图、大众点评、叮咚买菜、飞猪、京东/京东金融、拼多多、淘宝、支付宝、云闪付、苏宁、什么值得买、腾讯WiFi管家、上海移动和你、联想等约20个App的签到与积分任务。",
+    "resources": "即插即用的签到脚本模板库：仓库根目录即脚本清单，每个站点一个.js文件，可直接拷贝到手机Auto.js运行，另附autojs任务提醒.js统一触发调度。脚本逻辑以查找控件点击实现App内自动签到，含京东金融早起打卡、支付宝花呗红包、微信读书领卡等任务类扩展脚本。部分脚本标注TODO/已失效（App更新快），作者建议配合Tasker做定时调度以替代Auto.js不可靠的自带定时。",
+    "language": "JavaScript",
+    "deploy": "安卓端：Auto.js App内导入脚本执行，作者推荐用Tasker触发autojs.prj.xml做定时（凌晨执行）或adb shell调起",
+    "deps": "Auto.js安卓客户端（4.x/Pro）；Tasker（作者推荐用于可靠定时）；部分脚本依赖PC端VSCode+Auto.js插件调试"
+  },
+  {
+    "name": "millylee/anyrouter-check-in",
+    "url": "https://github.com/millylee/anyrouter-check-in",
+    "stars": 1405,
+    "relevance": "针对AI中转平台（AnyRouter/AgentRouter，兼容所有NewAPI/OneAPI平台）的多账号每日自动签到工具，一次可批量签到多个账号并推送结果。",
+    "resources": "checkin.py单脚本即可独立运行，支持邮箱密码登录自动获取cookie或直接填session cookie；多账号通过JSON数组配置，支持name/provider字段区分账号与平台，PROVIDERS环境变量可自定义任意NewAPI/OneAPI站点（域名+登录/签到路径+WAF绕过方式），相当于一个通用NewAPI签到模板。通知推送支持多种机器人（README列为可选功能），提供在线Secrets配置生成器网页。仓库含pyproject.toml/uv.lock、tests与pre-commit，工程化程度高。",
+    "language": "Python",
+    "deploy": "GitHub Actions：Fork仓库后在production环境配置ANYROUTER_ACCOUNTS密钥，workflow每6小时自动执行并支持手动触发",
+    "deps": "Python 3.11+；uv管理（pyproject.toml/uv.lock）；CloakBrowser（仅WAF站点需要绕过时）"
+  },
+  {
+    "name": "emby-keeper/emby-keeper",
+    "url": "https://github.com/emby-keeper/emby-keeper",
+    "stars": 1355,
+    "relevance": "Emby影视服务器社区的签到保号工具：自动完成50+ Emby站点的Telegram机器人每日签到，以及模拟登录/播放视频实现Emby账号保号（防因长期不活跃被删号）。",
+    "resources": "基于Pyrogram的签到器框架，提供一套便捷二次开发接口可自行扩展新站点签到器；README内置完整签到站点支持列表（终点站/Nebula/飞跃彩虹/PandaTV/开心服/MICU等，附频道/群组/机器人链接），这是Emby社区签到站点最全的现成名录之一。附加功能：邀请码抢注监听、群组抢红包/答题、站点考核辅助（接入GPT+题库）。提供官方文档站、安装指南与Telegram支持群，PyPI可直接pip安装embykeeper包。",
+    "language": "Python",
+    "deploy": "多种方式：Docker（官方镜像embykeeper/embykeeper，支持docker-compose）、PyPI安装（Linux/Windows本地运行）、云部署（Hugging Face Space一键duplicate、Heroku/render配置文件俱全）",
+    "deps": "Python（PyPI包embykeeper）；Docker镜像官方维护；Telegram账号（需API ID/Hash，Pyrogram）；可选代理（Telegram风控时）"
+  },
+  {
+    "name": "insoxin/China-Telecom-Helper",
+    "url": "https://github.com/insoxin/China-Telecom-Helper",
+    "stars": 1341,
+    "relevance": "中国电信App全自动任务工具（Go编译二进制）：每日签到领随机金豆、每月1000金豆领取、喂食宠物、登录奖励、查看云盘/订单/消息、翻牌、答问卷、支付宝小程序任务等，目标年攒金豆兑换256元+话费。",
+    "resources": "单仓库单二进制，开箱即用的Go编译产物：GitHub Releases提供linux/amd64/386/arm/mips、windows、darwin、freebsd/openbsd/netbsd共21个平台的预编译包，无需编译即可部署；仓库内仅README/wiki抓包教程与config.json配置模板。README注明作者已关闭依赖服务器、部分功能已失效（2023年5月后不再维护），config.json仅保留phone/sign抓包参数配置，实际可用性需实测。",
+    "language": "Go",
+    "deploy": "本地cron：下载对应平台二进制+填写config.json，用Linux crontab（作者建议每天0/8/16时各跑一次，因电信服务器常抽风）或Windows任务计划程序定时执行",
+    "deps": "无（预编译二进制，开箱即用）；Linux需libc6/libstdc++等基础库；电信抓包参数（phone/sign）需自行抓包或借助已关闭的公测API"
+  },
+  {
+    "name": "amchii/tg-signer",
+    "url": "https://github.com/amchii/tg-signer",
+    "stars": 1056,
+    "relevance": "Telegram 电报机器人自动执行框架：每日定时签到、发送消息、点击内联键盘、AI 识别图片点击、个人/群组/频道消息监控与自动回复。",
+    "resources": "pip 包 tg-signer 开箱即用，签到任务按 YAML/TOML 配置（定时+随机误差、文本匹配键盘点击、AI 图片识别点击）；自动化规则引擎（message/timer/startup 触发器+handler 链）、多账号并发、多平台监控；签到记录存 SQLite/JSON，自带 WebUI 可视化配置与查看签到记录。覆盖站点是 Telegram 上的各类签到 Bot，而非某固定站点。无独立推送模块，签到状态以日志/SQLite 记录和 WebUI 为主。",
+    "language": "Python",
+    "deploy": "pip 安装（PyPI）+ 本地 cron/systemd 定时，或 Docker 部署（ghcr.io/amchii/tg-signer 镜像，含 CLI 与 CLI+WebUI 两种），可配 croniter 式定时",
+    "deps": "kurigram（Telegram 客户端库）、click、pydantic、openai、croniter、httpx、json_repair；可选 speedup(tgcrypto)、gui(nicegui)、yaml；Python 3.10+"
+  },
+  {
+    "name": "88lin/workbuddy-auto-signin",
+    "url": "https://github.com/88lin/workbuddy-auto-signin",
+    "stars": 906,
+    "relevance": "腾讯 WorkBuddy（AI 编程助手）每日签到积分与成长中心奖励自动领取单文件脚本，读取本机桌面端登录态鉴权，签到接口从桌面端逆向而来。",
+    "resources": "单个自包含 Python 脚本 signin.py，无第三方依赖；覆盖每日签到领积分、成长中心全部奖励（Buddy 旅行礼物、派 Buddy、开盲盒、领任务/任务奖、连登兑换、断签补签）；幂等安全（先查状态再领）；智能汇报输出一行 JSON（领取积分/连续天数/累计）；附 Win 一键安装 PS1 脚本与 macOS launchd 模板 plist。推送方式为本机日志文件（Win signin.log / macOS /tmp/*.out）与 JSON 汇报输出，无独立消息推送模块。",
+    "language": "Python",
+    "deploy": "本机定时任务：Windows 任务计划程序（install-windows.ps1 一键安装）/ macOS launchd（模板 plist）/ Linux cron 或 CodeBuddy CLI 触发（WorkBuddy AI 自动化模式）；必须跑在已登录 WorkBuddy 桌面端的本机",
+    "deps": "仅 Python 3 标准库，零第三方依赖"
+  }
+]
